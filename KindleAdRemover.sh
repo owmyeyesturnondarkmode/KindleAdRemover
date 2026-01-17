@@ -28,8 +28,13 @@ then
 	if [ $? -eq 0 ]; then
 		echo	
 	else
-    	echo "not working..."
-    	echo "your kindle may be not supported, or just it is not recognised"
+		rm -r /media/$USER/Kindle/system/.assets
+		if [ $? -eq 0 ]; then
+			echo
+		else
+    		echo "not working..."
+    		echo "your kindle may be not supported, or just it is not recognised"
+		fi
 	fi
 
 	echo "wait a moment...";
@@ -39,8 +44,13 @@ then
 		echo
 		echo "done"
 	else
-    	echo "not..working"
-    	echo "your kindle may be not supported, or just it is not recognised"
+		touch /media/$USER/Kindle/system/.assets
+		if [ $? -eq 0 ]; then
+			echo
+		else
+    		echo "not..working"
+    		echo "your kindle may be not supported, or just it is not recognised"
+		fi
 	fi
 fi
 
